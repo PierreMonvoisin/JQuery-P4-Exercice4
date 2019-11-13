@@ -2,7 +2,7 @@ $(function() {
   // valide les inputs textes
   $('input').not('#birthday').keyup(function nameCheck() {
     let input = ($(this).val()).trim()
-    let pattern = /^[a-zA-Z.'-_ ]*$/;
+    let pattern = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð.'-_ ]*$/;
     if (pattern.test(input) && input != '') {
       $(this).css('border', '2px solid green')
     } else {
@@ -10,7 +10,7 @@ $(function() {
     }
   });
   //valide l'input date de naissance
-  $('#birthday').keyup(function mailCheck() {
+  $('#birthday').keyup(function dateCheck() {
     let input = ($(this).val()).trim();
     let pattern = /^([0-9]{2})+\/([0-9]{2})+\/([0-9]{2,4})$/;
     if (pattern.test(input) && input != ''){
